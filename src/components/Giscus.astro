@@ -19,6 +19,7 @@ const giscusConfig = {
   <div class="section-heading"><h2>评论</h2></div>
   <div class="giscus-container">
     <script
+      is:inline
       src="https://giscus.app/client.js"
       data-repo={giscusConfig.repo}
       data-repo-id={giscusConfig.repoId}
@@ -48,9 +49,9 @@ const giscusConfig = {
   }
 
   function updateGiscusTheme() {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-    iframe.contentWindow?.postMessage(
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+if (!iframe) return;
+iframe.contentWindow?.postMessage(
       { giscus: { setConfig: { theme: resolveTheme() } } },
       'https://giscus.app'
     );

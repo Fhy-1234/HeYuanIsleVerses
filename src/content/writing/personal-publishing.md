@@ -9,7 +9,7 @@ author: "Site Author"
 tags: [写作]
 featured: false
 minutes: 6
-column: "个人出版物基础"
+column: "示例系列"
 columnOrder: 1
 draft: false
 ---
