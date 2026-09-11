@@ -3,13 +3,13 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = `${siteOrigin}${basePath}`;
 
 export const site = {
-  name: 'A Quiet Publication',
-  title: 'A Quiet Publication · 静态个人出版物模板',
-  description: '一个不绑定作者身份的写作、项目、研究与影像出版模板。',
+  name: '禾愿辞屿',
+  title: '禾愿辞屿 - He Yuan Isle Verses',
+  description: '栖于屿上，拾尽人间辞章...',
   url: siteUrl,
   author: {
-    name: 'Site Author',
-    bio: '这里放置作者简介、长期关注的问题和公开写作方向。',
+    name: 'Fhy',
+    bio: '收集、记录和分享美好的短句、散文片段与诗行。',
     email: '',
   },
   locale: 'zh-cn',
@@ -20,7 +20,10 @@ export const site = {
     name: 'CC BY-NC-SA 4.0',
     url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
   },
-  social: [] as Array<{ label: string; href: string }>,
+  social: [
+    { label: '投稿邮箱', href: 'mailto:imfhy1234@outlook.com' },
+    { label: '站长博客', href: 'https://fhy-1234.github.io' },
+  ] as Array<{ label: string; href: string }>,
   features: {
     search: true,
     favorites: true,
@@ -29,7 +32,7 @@ export const site = {
     share: true,
     tips: false,
     newsletter: false,
-    comments: false,
+    comments: true,
   },
 } as const;
 

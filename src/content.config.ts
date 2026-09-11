@@ -27,7 +27,7 @@ const writing = defineCollection({
     column: z.string().optional(),
     columnOrder: z.number().optional(),
     minutes: z.number().positive().optional(),
-    comments: z.boolean().default(false),
+    comments: z.boolean().default(true),
   }),
 });
 

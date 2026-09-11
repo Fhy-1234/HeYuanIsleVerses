@@ -10,6 +10,9 @@ const { title, description, image, canonical, type, structuredData } = Astro.pro
   <head>
     <SEO title={title} description={description} image={image} canonical={canonical} type={type} structuredData={structuredData} />
     <script is:inline>try { document.documentElement.dataset.theme = localStorage.getItem('fourfold-theme') || 'system'; } catch { document.documentElement.dataset.theme = 'system'; }</script>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <a class="skip-link" href="#content">跳到正文</a>

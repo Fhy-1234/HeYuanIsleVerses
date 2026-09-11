@@ -1,18 +1,20 @@
 ---
-title: "把个人博客当作一间小型出版社"
+title: "示例文章1：把个人博客当作一间小型出版社"
 description: "从内容模型、阅读路径到发布边界，整理一个长期可维护的个人出版物应该具备什么。"
 locale: zh-cn
 translationKey: personal-publishing
 publishedAt: 2026-08-20
 updatedAt: 2026-08-20
 author: "Site Author"
-tags: [写作, 个人出版, 结构]
-featured: true
+tags: [写作]
+featured: false
 minutes: 6
 column: "个人出版物基础"
 columnOrder: 1
 draft: false
 ---
+
+这是主题附带的示例文章之一。
 
 个人博客不一定要像信息流，也不需要一开始就变成一个复杂的内容管理系统。它可以更像一间小型出版社：有自己的编辑原则、内容档案、阅读入口和长期保存方式。
 

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="收藏 · Fourfold"><section class="favorites narrow"><p class="eyebrow">Favorites</p><h1>留住想再读的。</h1><p class="muted">收藏只保存在当前浏览器，不需要账号，也不会上传。</p><div id="favorites-list"></div><button id="clear" hidden>清空全部</button></section></BaseLayout>
+<BaseLayout title="收藏 · 禾愿辞屿"><section class="favorites narrow"><p class="eyebrow">Favorites</p><h1>留住美好</h1><p class="muted">免登录、快捷收藏您喜欢的内容，数据只保存在当前浏览器，不会分享至其他地方。</p><div id="favorites-list"></div><button id="clear" hidden>清空全部</button></section></BaseLayout>
 <script>
   const root=document.querySelector<HTMLElement>('#favorites-list');
   const clear=document.querySelector<HTMLButtonElement>('#clear');
@@ -14,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if(ids.length) {
         ids.forEach((id)=>{ const paragraph=document.createElement('p'); paragraph.className='saved'; const link=document.createElement('a'); link.href=id; link.textContent=id; paragraph.append(link); root.append(paragraph); });
       } else {
-        const empty=document.createElement('p'); empty.className='empty'; empty.textContent='还没有收藏。打开一篇文章，点击“收藏”即可。'; root.append(empty);
+        const empty=document.createElement('p'); empty.className='empty'; empty.textContent='( •̀ ω •́ )✧收藏夹还什么都没有哦~ 不如打开一篇内容，点击收藏留住美好吧！'; root.append(empty);
       }
     }
     clear?.toggleAttribute('hidden',!ids.length);

@@ -1,14 +1,16 @@
 ---
-title: "一份好的开始页，应该回答什么"
+title: "示例文章2：一份好的开始页，应该回答什么"
 description: "用问题而不是栏目名称，为第一次来到博客的读者提供一条低摩擦的阅读路径。"
 locale: zh-cn
 translationKey: reading-paths
 publishedAt: 2026-08-12
-tags: [阅读, 信息架构, 写作]
+tags: [写作]
 featured: false
 minutes: 4
 draft: false
 ---
+
+这是主题附带的示例文章之一。
 
 当内容积累到一定规模，首页不应该只展示最新文章。开始页可以把内容重新组织成几个读者真正关心的问题。
 

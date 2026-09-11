@@ -7,6 +7,7 @@ import FavoriteButton from '../../../../components/islands/FavoriteButton.astro'
 import CopyLink from '../../../../components/islands/CopyLink.astro';
 import PostCard from '../../../../components/blog/PostCard.astro';
 import { getPublishedWriting, writingPath } from '../../../../lib/content';
+import Giscus from '../../../../components/Giscus.astro';
 export async function getStaticPaths(){
   const entries=await getPublishedWriting();
   return entries.map((entry)=>{ const d=entry.data.publishedAt; return {params:{year:String(d.getFullYear()),month:String(d.getMonth()+1).padStart(2,'0'),slug:entry.id.replace(/^.*\//,'').replace(/\.(md|mdx)$/,'')},props:{entry}} });
@@ -34,6 +35,7 @@ const structuredData = {
     <TableOfContents headings={headings.filter((h)=>h.depth<=3)}/>
     <div class="prose"><Content /></div>
   </article>
+  {entry.data.comment !== false && <Giscus />}
   {related.length>0 && <section class="narrow"><div class="section-heading"><h2>相关文章</h2></div><div class="list">{related.map((item)=><PostCard entry={item}/>)}</div></section>}
   <nav class="post-nav narrow" aria-label="文章导航"><div>{previous && <><span>上一篇</span><a href={writingPath(previous)}>{previous.data.title}</a></>}</div><div>{next && <><span>下一篇</span><a href={writingPath(next)}>{next.data.title}</a></>}</div></nav>
 </BaseLayout>

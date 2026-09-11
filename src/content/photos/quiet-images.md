@@ -1,15 +1,15 @@
 ---
-title: "一组安静的影像"
-description: "一个最小画廊示例。替换 photos 数组即可建立自己的影像档案。"
+title: "风景"
+description: "世界各地的风景(示例系列)"
 locale: zh-cn
-slug: quiet-images
-cover: /og-default.svg
+slug: beautiful-images
+cover: //i.postimg.cc/rFh8WJJK/IMG-8694.jpg
 photos:
-  - src: /og-default.svg
-    alt: "抽象的四象限图形"
-    caption: "示例图像，可替换为自己的照片。"
-  - src: /og-default.svg
-    alt: "抽象的四象限图形"
+  - src: //i.postimg.cc/ZK0kkh85/IMG-2590.jpg
+    alt: "伊溪湿地公园"
+    caption: "吉林省,四平市,伊通县"
+  - src: //i.postimg.cc/VvLD2dkq/IMG-4605.jpg
+    alt: "民园广场"
 draft: false
 ---
 

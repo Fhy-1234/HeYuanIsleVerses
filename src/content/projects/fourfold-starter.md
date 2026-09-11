@@ -5,7 +5,7 @@ locale: zh-cn
 publishedAt: 2026-08-20
 status: active
 type: template
-tags: [Astro, 开源, 个人网站]
+tags: [Astro, 开源]
 draft: false
 ---
 

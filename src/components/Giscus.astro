@@ -1,0 +1,75 @@
+---
+// src/components/Giscus.astro
+const giscusConfig = {
+  repo: "Fhy-1234/HeYuanIsleVerses",
+  repoId: "R_kgDOUSWjag",
+  category: "General",
+  categoryId: "DIC_kwDOUSWjas4DFJSm",
+  mapping: "pathname",
+  strict: "0",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "top",
+  lang: "zh-CN",
+  loading: "lazy",
+};
+---
+
+<section class="giscus-section narrow">
+  <div class="section-heading"><h2>评论</h2></div>
+  <div class="giscus-container">
+    <script
+      src="https://giscus.app/client.js"
+      data-repo={giscusConfig.repo}
+      data-repo-id={giscusConfig.repoId}
+      data-category={giscusConfig.category}
+      data-category-id={giscusConfig.categoryId}
+      data-mapping={giscusConfig.mapping}
+      data-strict={giscusConfig.strict}
+      data-reactions-enabled={giscusConfig.reactionsEnabled}
+      data-emit-metadata={giscusConfig.emitMetadata}
+      data-input-position={giscusConfig.inputPosition}
+      data-theme="preferred_color_scheme"
+      data-lang={giscusConfig.lang}
+      data-loading={giscusConfig.loading}
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+</section>
+
+<script>
+  function resolveTheme() {
+    const t = localStorage.getItem('fourfold-theme') || 'system';
+    if (t === 'light') return 'light';
+    if (t === 'dark') return 'dark';
+    // system
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateGiscusTheme() {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow?.postMessage(
+      { giscus: { setConfig: { theme: resolveTheme() } } },
+      'https://giscus.app'
+    );
+  }
+
+  // 首次加载 + 页面切换
+  document.addEventListener('astro:page-load', () => {
+    setTimeout(updateGiscusTheme, 500);
+  });
+
+  // 监听主题切换（Fourfold 会改 <html data-theme>）
+  const observer = new MutationObserver(updateGiscusTheme);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  // 系统主题变化
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateGiscusTheme);
+</script>
+
+<style>
+  .giscus-section { margin-top: 4rem; }
+  .giscus-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+</style>
